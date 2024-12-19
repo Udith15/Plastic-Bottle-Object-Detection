@@ -1,0 +1,6 @@
+train: "D:\\EDGE MATRIX internship\\Plastic bottle detection\\Plastic Bottle Image Dataset\\train"
+val: "D:\\EDGE MATRIX internship\\Plastic bottle detection\\Plastic Bottle Image Dataset\\valid"
+test: "D:\\EDGE MATRIX internship\\Plastic bottle detection\\Plastic Bottle Image Dataset\\test"
+
+nc: 1
+names: ['bottle']
