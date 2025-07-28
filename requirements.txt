@@ -6,3 +6,6 @@ numpy
 requests
 pandas
 matplotlib
+cv2
+os
+shutil
