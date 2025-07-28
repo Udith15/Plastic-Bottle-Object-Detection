@@ -4,9 +4,11 @@ from ultralytics import YOLO
 import tempfile
 import os
 import shutil
+import platform
 
 # Load the pre-trained YOLO model
-model = YOLO("D:\\EDGE MATRIX internship\\Plastic bottle detection\\Plastic Bottle Image Dataset\\trained weights.pt")
+model = YOLO(os.path.join("model", "trainedweights.pt"))
+is_local = platform.system() != 'Linux'  # True if running locally
 
 # Define output directory
 output_dir = "output"
@@ -119,6 +121,11 @@ elif option == "Video Detection":
 
         st.video(result_video_path)
 
+
 elif option == "Real-time Detection":
-    st.write("Starting real-time detection...")
-    detect_and_display_realtime()
+    if is_local:
+        st.write("Starting real-time detection...")
+        detect_and_display_realtime()
+    else:
+        st.warning("Real-time detection not supported on web deployment.")
+
